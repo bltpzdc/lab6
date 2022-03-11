@@ -1,8 +1,5 @@
-import commands.CommandManager;
-import collection.CollectionLoader;
-import collection.CollectionManager;
-import collection.ConsoleReader;
-import commands.FilesSafe;
+import tools.worksWithCommands.CommandManager;
+import tools.consoleTools.ConsoleReader;
 
 public class Main {
     public static void main(String[] args){

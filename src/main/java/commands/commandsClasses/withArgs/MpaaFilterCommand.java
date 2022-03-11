@@ -1,8 +1,8 @@
 package commands.commandsClasses.withArgs;
 
-import collection.CollectionManager;
+import tools.collectionTools.CollectionManager;
 import commands.Command;
-import sources.MpaaRating;
+import startingData.MpaaRating;
 
 public class MpaaFilterCommand implements Command {
     private String name="filter_less_than_mpaa_rating";

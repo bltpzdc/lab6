@@ -1,6 +1,6 @@
 package commands.commandsClasses.withElements;
 
-import collection.CollectionManager;
+import tools.collectionTools.CollectionManager;
 import commands.Command;
 
 public class AddCommand implements Command {

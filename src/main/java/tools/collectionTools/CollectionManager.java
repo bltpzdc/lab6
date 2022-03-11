@@ -1,14 +1,14 @@
-package collection;
+package tools.collectionTools;
 
-import commands.*;
-import commands.FileReader;
+import tools.consoleTools.ConsoleReader;
+import tools.insideCommands.*;
+import tools.worksWithCommands.Invoker;
 import exeptions.InvalidNameException;
 import exeptions.NonArgsExeption;
 import exeptions.TooManyArgsException;
 import lombok.Getter;
-import sources.*;
+import startingData.*;
 
-import java.io.*;
 import java.time.LocalDate;
 import java.util.*;
 

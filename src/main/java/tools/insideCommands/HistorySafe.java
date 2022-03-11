@@ -1,4 +1,4 @@
-package commands;
+package tools.insideCommands;
 
 import lombok.Getter;
 import lombok.Setter;

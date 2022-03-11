@@ -1,7 +1,7 @@
-package collection;
+package tools.consoleTools;
 
-import commands.HistorySaver;
-import commands.Invoker;
+import tools.insideCommands.HistorySaver;
+import tools.worksWithCommands.Invoker;
 import exeptions.InvalidNameException;
 import exeptions.NonArgsExeption;
 import exeptions.TooManyArgsException;

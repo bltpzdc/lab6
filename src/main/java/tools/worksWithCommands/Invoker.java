@@ -1,4 +1,4 @@
-package commands;
+package tools.worksWithCommands;
 
 import exeptions.InvalidNameException;
 import exeptions.NonArgsExeption;

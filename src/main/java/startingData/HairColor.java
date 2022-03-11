@@ -1,4 +1,4 @@
-package sources;
+package startingData;
 
 public enum HairColor {
     RED,

@@ -1,7 +1,7 @@
-package commands;
+package tools.insideCommands;
 
-import sources.Movie;
-import sources.MpaaRating;
+import startingData.Movie;
+import startingData.MpaaRating;
 
 import java.util.Comparator;
 

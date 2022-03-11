@@ -1,7 +1,6 @@
 package commands.commandsClasses.withArgs;
 
-import collection.CollectionLoader;
-import collection.CollectionManager;
+import tools.collectionTools.CollectionManager;
 import commands.Command;
 
 public class ExecuteScript implements Command {

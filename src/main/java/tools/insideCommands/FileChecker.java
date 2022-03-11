@@ -1,4 +1,4 @@
-package commands;
+package tools.insideCommands;
 
 import java.util.Objects;
 

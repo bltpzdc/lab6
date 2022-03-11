@@ -1,6 +1,6 @@
 package commands.commandsClasses.withArgs;
 
-import collection.CollectionManager;
+import tools.collectionTools.CollectionManager;
 import commands.Command;
 
 public class RemoveByIdCommand implements Command {

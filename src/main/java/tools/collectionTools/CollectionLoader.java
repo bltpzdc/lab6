@@ -1,10 +1,10 @@
-package collection;
+package tools.collectionTools;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import sources.CustomVector;
-import sources.Movie;
+import startingData.CustomVector;
+import startingData.Movie;
 
 import java.io.*;
 import java.lang.reflect.Type;

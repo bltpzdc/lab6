@@ -1,7 +1,6 @@
-package sources;
+package startingData;
 
 import java.time.LocalDate;
-import java.util.Scanner;
 import java.util.Vector;
 
 public class CustomVector<T> extends Vector<T> {

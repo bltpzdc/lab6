@@ -1,6 +1,6 @@
 package commands.commandsClasses.withArgsElems;
 
-import collection.CollectionManager;
+import tools.collectionTools.CollectionManager;
 import commands.Command;
 
 public class InsertAtCommand implements Command {

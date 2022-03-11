@@ -1,6 +1,6 @@
 package commands.commandsClasses.withoutAll;
 
-import collection.CollectionManager;
+import tools.collectionTools.CollectionManager;
 import commands.Command;
 
 public class InfoCommand implements Command {

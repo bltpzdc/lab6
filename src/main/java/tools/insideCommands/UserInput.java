@@ -1,6 +1,6 @@
-package commands;
+package tools.insideCommands;
 
-import sources.*;
+import startingData.*;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

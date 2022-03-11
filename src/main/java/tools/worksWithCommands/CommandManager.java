@@ -1,7 +1,8 @@
-package commands;
+package tools.worksWithCommands;
 
-import collection.CollectionLoader;
-import collection.CollectionManager;
+import tools.collectionTools.CollectionLoader;
+import tools.collectionTools.CollectionManager;
+import commands.Command;
 import commands.commandsClasses.withArgs.ExecuteScript;
 import commands.commandsClasses.withArgs.MpaaFilterCommand;
 import commands.commandsClasses.withArgs.RemoveByIdCommand;

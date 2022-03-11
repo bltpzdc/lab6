@@ -1,4 +1,4 @@
-package sources;
+package startingData;
 
 public class Coordinates {
     private double x;

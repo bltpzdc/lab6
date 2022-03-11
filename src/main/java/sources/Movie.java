@@ -1,22 +1,27 @@
 package sources;
 
-import java.time.LocalDate;
 
+import lombok.*;
+
+@Data
+@Builder
 public class Movie implements Comparable<Movie>{
+    @NonNull
     private Integer id;
+    @NonNull
     private String name;
+    @NonNull
     private Coordinates coordinates;
+    @NonNull
     private Long oscarsCount;
+    @NonNull
     private MovieGenre genre;
+    @NonNull
     private MpaaRating mpaaRating;
+    @NonNull
     private Person director;
+    @NonNull
     private java.time.LocalDate creationDate;
-
-    public Movie(int id){
-        this.id=id;
-    }
-
-    public Movie(){}
 
     public int getID(){
         return id;
@@ -29,7 +34,7 @@ public class Movie implements Comparable<Movie>{
 
     @Override
     public int compareTo(Movie o) {
-        return id.compareTo(o.getID());
+         return id.compareTo(o.getID());
     }
 
 

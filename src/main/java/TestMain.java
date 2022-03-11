@@ -1,15 +1,3 @@
-
-import Commands.HelpCommand;
-import Commands.Invoker;
-import sources.*;
-
-import com.google.gson.*;
-import com.google.gson.reflect.TypeToken;
-
-import java.io.*;
-import java.lang.reflect.Type;
-import java.util.*;
-
 public class TestMain {
     public static void main(String[] args){
         /*var env = System.getenv();

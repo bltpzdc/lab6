@@ -16,7 +16,7 @@ public class CollectionLoader {
     private CustomVector<Movie> movieList;
 
     public CollectionLoader(){
-        var env = System.getenv();
+        /*var env = System.getenv();
         File fileName = new File(env.get("PROCESSOR_ARCHITECTURE") + ".json");
         List<String> filesLines = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)))){
@@ -35,6 +35,29 @@ public class CollectionLoader {
                 .setDateFormat("dd/MM/yyyy").create();
         Type movieTypes = new TypeToken<CustomVector<Movie>>(){}.getType();
         movieList = gson.fromJson(json, movieTypes);
+        Collections.sort(movieList);*/
+    }
+
+    public void load(){
+        var env = System.getenv();
+        File fileName = new File("src\\main\\resources\\"+env.get("PROCESSOR_ARCHITECTURE") + ".json");
+        List<String> filesLines = new ArrayList<>();
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)))){
+            String jsonHelper;
+            while((jsonHelper = reader.readLine())!=null){
+                filesLines.add(jsonHelper);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String json="";
+        for (String i:filesLines){
+            json+=i;
+        }
+        Gson gson = new GsonBuilder()
+                .setDateFormat("dd/MM/yyyy").create();
+        Type movieTypes = new TypeToken<CustomVector<Movie>>(){}.getType();
+        this.movieList = gson.fromJson(json, movieTypes);
         Collections.sort(movieList);
     }
 

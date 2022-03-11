@@ -12,6 +12,14 @@ public class Person {
         return birthday;
     }
 
+    public Person(String name, Date birthday, EyeColor eyeColor, HairColor hairColor, Country nationality){
+        this.name=name;
+        this.birthday=birthday;
+        this.eyeColor=eyeColor;
+        this.hairColor=hairColor;
+        this.nationality=nationality;
+    }
+
     public String toString(){
         return name+" with "+eyeColor+" eyes and "+hairColor+" hairs. Was born "+birthday+" in "+nationality;
     }

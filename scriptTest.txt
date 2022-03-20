@@ -1,3 +1,2 @@
-filter_less_than_mpaa_rating R
 show
-execute_script script2.txt
+execute_script ex.txt

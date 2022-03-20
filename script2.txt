@@ -1,2 +1,2 @@
 show
-execute_script outputFile.json
+execute_script scriptTest.txt

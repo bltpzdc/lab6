@@ -11,8 +11,8 @@ import commands.commandsClasses.withArgsElems.UpdateCommand;
 import commands.commandsClasses.withElements.AddCommand;
 import commands.commandsClasses.withElements.RemoveGreaterCommand;
 import commands.commandsClasses.withoutAll.*;
-import lombok.Getter;
 
+import lombok.Getter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,21 +20,12 @@ public class CommandManager {
     @Getter
     private static final Map<String, Command> commands= new HashMap<>();
     private CollectionLoader loader;
-    @Getter
-    private CollectionManager manager;
 
     private void registerCommand(Command command){
         commands.put(command.getName(), command);
     }
 
-    public CommandManager(CollectionManager manager){
-        this.manager = manager;
-    }
-
-    public CommandManager(){
-        loader = new CollectionLoader();
-        loader.load();
-        manager = new CollectionManager(loader);
+    public CommandManager(CollectionManager manager) {
         registerCommand(new HelpCommand(manager));
         registerCommand(new InfoCommand(manager));
         registerCommand(new ShowCommand(manager));

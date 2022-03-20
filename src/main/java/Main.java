@@ -13,6 +13,5 @@ public class Main {
         CommandManager commandManager = new CommandManager(collectionManager);
         ConsoleReader reader = new ConsoleReader();
         reader.run();
-        System.out.println(collectionManager.getMovieList());
     }
 }

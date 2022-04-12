@@ -1,16 +1,16 @@
-package tools.worksWithCommands;
+package clientAndServer.tools.worksWithCommands;
 
-import tools.collectionTools.CollectionLoader;
-import tools.collectionTools.CollectionManager;
-import commands.Command;
-import commands.commandsClasses.withArgs.ExecuteScript;
-import commands.commandsClasses.withArgs.MpaaFilterCommand;
-import commands.commandsClasses.withArgs.RemoveByIdCommand;
-import commands.commandsClasses.withArgsElems.InsertAtCommand;
-import commands.commandsClasses.withArgsElems.UpdateCommand;
-import commands.commandsClasses.withElements.AddCommand;
-import commands.commandsClasses.withElements.RemoveGreaterCommand;
-import commands.commandsClasses.withoutAll.*;
+import clientAndServer.commands.commandsClasses.withoutAll.*;
+import clientAndServer.tools.collectionTools.CollectionLoader;
+import clientAndServer.tools.collectionTools.CollectionManager;
+import clientAndServer.commands.Command;
+import clientAndServer.commands.commandsClasses.withArgs.ExecuteScript;
+import clientAndServer.commands.commandsClasses.withArgs.MpaaFilterCommand;
+import clientAndServer.commands.commandsClasses.withArgs.RemoveByIdCommand;
+import clientAndServer.commands.commandsClasses.withArgsElems.InsertAtCommand;
+import clientAndServer.commands.commandsClasses.withArgsElems.UpdateCommand;
+import clientAndServer.commands.commandsClasses.withElements.AddCommand;
+import clientAndServer.commands.commandsClasses.withElements.RemoveGreaterCommand;
 
 import lombok.Getter;
 import java.util.HashMap;

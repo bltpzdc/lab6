@@ -1,17 +1,20 @@
-package tools.collectionTools;
+package clientAndServer.tools.collectionTools;
 
-import tools.ServerAnswer;
-import tools.ServerSender;
-import tools.consoleTools.ConsoleReader;
-import tools.insideCommands.*;
-import tools.worksWithCommands.Invoker;
-import exeptions.InvalidNameException;
-import exeptions.NonArgsExeption;
-import exeptions.TooManyArgsException;
+import clientAndServer.startingData.CustomVector;
+import clientAndServer.startingData.Movie;
+import clientAndServer.startingData.MpaaRating;
+import clientAndServer.tools.consoleTools.ConsoleReader;
+import clientAndServer.tools.insideCommands.*;
+import server.tools.ServerAnswer;
+import server.tools.ServerSender;
+import clientAndServer.tools.insideCommands.*;
+import clientAndServer.tools.worksWithCommands.Invoker;
+import clientAndServer.exeptions.InvalidNameException;
+import clientAndServer.exeptions.NonArgsExeption;
+import clientAndServer.exeptions.TooManyArgsException;
 import lombok.Getter;
-import startingData.*;
+import clientAndServer.startingData.*;
 
-import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
 

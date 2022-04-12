@@ -1,13 +1,9 @@
-package tools.worksWithCommands;
+package clientAndServer.tools.worksWithCommands;
 
-import commands.Command;
-import commands.commandsClasses.withArgsElems.InsertAtCommand;
-import commands.commandsClasses.withArgsElems.UpdateCommand;
-import commands.commandsClasses.withElements.AddCommand;
-import commands.commandsClasses.withElements.RemoveGreaterCommand;
-import exeptions.InvalidNameException;
-import exeptions.NonArgsExeption;
-import exeptions.TooManyArgsException;
+import clientAndServer.commands.Command;
+import clientAndServer.exeptions.InvalidNameException;
+import clientAndServer.exeptions.NonArgsExeption;
+import clientAndServer.exeptions.TooManyArgsException;
 
 public class Invoker {
 

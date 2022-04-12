@@ -1,7 +1,7 @@
-package tools.insideCommands;
+package clientAndServer.tools.insideCommands;
 
-import startingData.Movie;
-import startingData.MpaaRating;
+import clientAndServer.startingData.Movie;
+import clientAndServer.startingData.MpaaRating;
 
 import java.util.Comparator;
 

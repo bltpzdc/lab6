@@ -1,9 +1,9 @@
-package tools.collectionTools;
+package clientAndServer.tools.collectionTools;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import startingData.CustomVector;
-import startingData.Movie;
+import clientAndServer.startingData.CustomVector;
+import clientAndServer.startingData.Movie;
 
 import java.io.*;
 

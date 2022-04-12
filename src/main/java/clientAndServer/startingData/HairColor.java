@@ -1,4 +1,4 @@
-package startingData;
+package clientAndServer.startingData;
 
 public enum HairColor {
     RED,

@@ -1,4 +1,4 @@
-package startingData;
+package clientAndServer.startingData;
 
 
 import lombok.*;

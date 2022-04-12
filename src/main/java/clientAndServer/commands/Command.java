@@ -1,8 +1,6 @@
-package commands;
+package clientAndServer.commands;
 
-import lombok.Getter;
-import lombok.Setter;
-import startingData.Movie;
+import clientAndServer.startingData.Movie;
 
 public interface Command {
     public Movie getMovie();

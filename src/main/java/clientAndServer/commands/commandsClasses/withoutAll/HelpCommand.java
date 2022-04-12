@@ -1,11 +1,11 @@
-package commands.commandsClasses.withoutAll;
+package clientAndServer.commands.commandsClasses.withoutAll;
 
-import exeptions.TooManyArgsException;
+import clientAndServer.exeptions.TooManyArgsException;
 import lombok.Getter;
 import lombok.Setter;
-import startingData.Movie;
-import tools.collectionTools.CollectionManager;
-import commands.Command;
+import clientAndServer.startingData.Movie;
+import clientAndServer.tools.collectionTools.CollectionManager;
+import clientAndServer.commands.Command;
 
 import java.io.Serializable;
 

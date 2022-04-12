@@ -1,19 +1,19 @@
-package tools.consoleTools;
+package clientAndServer.tools.consoleTools;
 
-import commands.commandsClasses.withArgs.ExecuteScript;
-import commands.commandsClasses.withArgs.MpaaFilterCommand;
-import commands.commandsClasses.withArgs.RemoveByIdCommand;
-import commands.commandsClasses.withArgsElems.InsertAtCommand;
-import commands.commandsClasses.withArgsElems.UpdateCommand;
-import commands.commandsClasses.withElements.AddCommand;
-import commands.commandsClasses.withElements.RemoveGreaterCommand;
-import commands.commandsClasses.withoutAll.*;
-import exeptions.NonArgsExeption;
+import clientAndServer.commands.commandsClasses.withArgs.ExecuteScript;
+import clientAndServer.commands.commandsClasses.withArgs.MpaaFilterCommand;
+import clientAndServer.commands.commandsClasses.withArgs.RemoveByIdCommand;
+import clientAndServer.commands.commandsClasses.withArgsElems.InsertAtCommand;
+import clientAndServer.commands.commandsClasses.withArgsElems.UpdateCommand;
+import clientAndServer.commands.commandsClasses.withElements.AddCommand;
+import clientAndServer.commands.commandsClasses.withElements.RemoveGreaterCommand;
+import clientAndServer.commands.commandsClasses.withoutAll.*;
+import clientAndServer.exeptions.NonArgsExeption;
 import lombok.Getter;
-import tools.ClientPacketsSender;
-import exeptions.InvalidNameException;
+import client.tools.ClientSender;
+import clientAndServer.exeptions.InvalidNameException;
 
-import exeptions.TooManyArgsException;
+import clientAndServer.exeptions.TooManyArgsException;
 import lombok.Setter;
 
 
@@ -32,7 +32,7 @@ public class ConsoleReader {
     }
 
     public void run(DatagramSocket clientSocket) throws Exception {
-        ClientPacketsSender packetsSender = new ClientPacketsSender();
+        ClientSender packetsSender = new ClientSender();
         Scanner scanner = new Scanner(System.in);
         if(scanner.hasNext()){
             arraysOfParams = scanner.nextLine().split(" +");

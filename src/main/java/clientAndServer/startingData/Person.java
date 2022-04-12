@@ -1,4 +1,4 @@
-package startingData;
+package clientAndServer.startingData;
 
 import java.io.Serializable;
 import java.util.Date;

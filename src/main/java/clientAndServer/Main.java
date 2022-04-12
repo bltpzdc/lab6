@@ -1,9 +1,6 @@
-import tools.collectionTools.CollectionLoader;
-import tools.collectionTools.CollectionManager;
-import tools.worksWithCommands.CommandManager;
-import tools.consoleTools.ConsoleReader;
+package clientAndServer;
 
-import java.io.IOException;
+import clientAndServer.tools.consoleTools.ConsoleReader;
 
 public class Main {
     public static void main(String[] args){

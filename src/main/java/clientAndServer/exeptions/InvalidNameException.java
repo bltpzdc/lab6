@@ -1,4 +1,4 @@
-package exeptions;
+package clientAndServer.exeptions;
 
 public class InvalidNameException extends Exception{
 

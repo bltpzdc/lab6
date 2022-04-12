@@ -1,4 +1,4 @@
-package tools.insideCommands;
+package clientAndServer.tools.insideCommands;
 
 import lombok.Getter;
 

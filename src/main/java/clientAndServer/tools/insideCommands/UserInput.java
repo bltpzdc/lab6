@@ -1,6 +1,6 @@
-package tools.insideCommands;
+package clientAndServer.tools.insideCommands;
 
-import startingData.*;
+import clientAndServer.startingData.*;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

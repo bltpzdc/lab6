@@ -1,12 +1,12 @@
-package commands.commandsClasses.withArgsElems;
+package clientAndServer.commands.commandsClasses.withArgsElems;
 
-import exeptions.NonArgsExeption;
+import clientAndServer.exeptions.NonArgsExeption;
 import lombok.Getter;
 import lombok.Setter;
-import startingData.Movie;
-import tools.MovieBuilder;
-import tools.collectionTools.CollectionManager;
-import commands.Command;
+import clientAndServer.startingData.Movie;
+import clientAndServer.tools.insideCommands.MovieBuilder;
+import clientAndServer.tools.collectionTools.CollectionManager;
+import clientAndServer.commands.Command;
 
 import java.io.Serializable;
 

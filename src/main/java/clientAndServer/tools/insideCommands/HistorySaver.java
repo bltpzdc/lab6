@@ -1,4 +1,4 @@
-package tools.insideCommands;
+package clientAndServer.tools.insideCommands;
 
 import java.util.ArrayList;
 import java.util.List;

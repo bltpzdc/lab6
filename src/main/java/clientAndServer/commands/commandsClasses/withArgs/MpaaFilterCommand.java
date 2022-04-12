@@ -1,16 +1,13 @@
-package commands.commandsClasses.withArgs;
+package clientAndServer.commands.commandsClasses.withArgs;
 
-import exeptions.NonArgsExeption;
+import clientAndServer.exeptions.NonArgsExeption;
 import lombok.Getter;
-import lombok.Setter;
-import startingData.Movie;
-import tools.collectionTools.CollectionManager;
-import commands.Command;
-import startingData.MpaaRating;
+import clientAndServer.startingData.Movie;
+import clientAndServer.tools.collectionTools.CollectionManager;
+import clientAndServer.commands.Command;
+import clientAndServer.startingData.MpaaRating;
 
 import java.io.Serializable;
-import java.security.InvalidParameterException;
-import java.util.Optional;
 
 public class MpaaFilterCommand implements Command, Serializable {
     private String name="filter_less_than_mpaa_rating";

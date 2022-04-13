@@ -32,13 +32,6 @@ public class ClearCommand implements Command, Serializable {
         movieList.clear();
     }
 
-    public void execute(Movie movie){
-    }
-    @Override
-    public void execute(String params, Movie movie) {
-
-    }
-
     @Override
     public String getName() {
         return name;

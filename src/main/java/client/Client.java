@@ -20,7 +20,11 @@ public class Client {
             catch (Exception e){
                 continue;
             }
-            receiver.receive(clientSocket);
+            try{receiver.receive(clientSocket);}
+            catch (SocketTimeoutException e){
+                System.out.println("Server is not available now.");
+                break;
+            }
         }
 
     }

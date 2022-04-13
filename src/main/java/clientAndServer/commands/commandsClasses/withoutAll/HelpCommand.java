@@ -46,10 +46,4 @@ public class HelpCommand implements Command, Serializable {
     public void execute(String params) {
         manager.help();
     }
-    public void execute(Movie movie){
-    }
-    @Override
-    public void execute(String params, Movie movie) {
-
-    }
 }

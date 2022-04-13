@@ -15,7 +15,12 @@ public class ClientSender {
             ous.writeObject(command);
             DatagramPacket packet = new DatagramPacket(baos.toByteArray(), baos.toByteArray().length, InetAddress.getByName("localhost"), SERVER_PORT);
             clientSocket.send(packet);
+            clientSocket.setSoTimeout(3000);
+
             System.out.println("Command "+command.getName()+" sent.\n");
+        }
+        catch (SocketTimeoutException e){
+            System.out.println("Server is not available now.");
         }
         catch (Exception e){
             e.printStackTrace();

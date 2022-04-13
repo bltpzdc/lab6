@@ -33,12 +33,6 @@ public class InsertAtCommand implements Command, Serializable {
     }
 
     @Override
-    public void execute(String params) {
-    }
-    public void execute(Movie movie){
-    }
-
-    @Override
     public void execute(String params, Movie movie) {
         manager.insertAt(tryParse(params), movie);
     }

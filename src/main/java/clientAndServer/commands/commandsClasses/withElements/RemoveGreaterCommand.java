@@ -31,16 +31,10 @@ public class RemoveGreaterCommand implements Command, Serializable {
     }
 
     @Override
-    public void execute(String params) {
-
-    }
     public void execute(Movie movie){
         manager.removeGreater(movie);
     }
-    @Override
-    public void execute(String params, Movie movie) {
 
-    }
 
     @Override
     public String getName() {

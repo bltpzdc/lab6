@@ -31,12 +31,6 @@ public class PrintDescendingCommand implements Command, Serializable {
     public void execute(String params) {
         manager.printDescending();
     }
-    public void execute(Movie movie){
-    }
-    @Override
-    public void execute(String params, Movie movie) {
-
-    }
 
     @Override
     public String getName() {

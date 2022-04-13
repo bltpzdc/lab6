@@ -1,4 +1,4 @@
-package clientAndServer.tools.consoleTools;
+package client.tools;
 
 import clientAndServer.commands.commandsClasses.withArgs.MpaaFilterCommand;
 import clientAndServer.commands.commandsClasses.withArgs.RemoveByIdCommand;
@@ -7,37 +7,39 @@ import clientAndServer.commands.commandsClasses.withArgsElems.UpdateCommand;
 import clientAndServer.commands.commandsClasses.withElements.AddCommand;
 import clientAndServer.commands.commandsClasses.withElements.RemoveGreaterCommand;
 import clientAndServer.commands.commandsClasses.withoutAll.*;
-import clientAndServer.exeptions.NonArgsExeption;
-import client.tools.FilesSafe;
-import client.tools.Scripter;
-import lombok.Getter;
-import client.tools.ClientSender;
 import clientAndServer.exeptions.InvalidNameException;
-
+import clientAndServer.exeptions.NonArgsExeption;
 import clientAndServer.exeptions.TooManyArgsException;
-import lombok.Setter;
-
+import clientAndServer.tools.consoleTools.ConsoleReader;
 
 import java.io.*;
 import java.net.DatagramSocket;
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
-public class ConsoleReader {
-    @Getter @Setter
-    private static boolean toExit = false;
-    private String[] arraysOfParams;
-    @Setter
-    private static boolean runnerFlag=true;
-    public String[] getArrayOfParams(){
-        return this.arraysOfParams;
+public class Scripter {
+    private List<String> commandsList = new ArrayList<>();
+
+    public void read(String fileName){
+        FilesSafe.put(fileName);
+        File file = new File(fileName);
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)))) {
+            String a;
+            while ((a = reader.readLine()) != null) {
+                commandsList.add(a);
+            }
+        } catch (IOException e) {
+            System.out.println("Invalid name of file");
+        }
     }
 
-    public void run(DatagramSocket clientSocket) throws Exception {
+    public void executeScript(DatagramSocket clientSocket){
+        int sch = 0;
+        ClientReceiver receiver = new ClientReceiver();
         ClientSender packetsSender = new ClientSender();
-        Scanner scanner = new Scanner(System.in);
-        if(scanner.hasNext()){
-            String consoleLine = scanner.nextLine();
-            arraysOfParams = consoleLine.split(" +");
+        for (String command:commandsList){
+            String[] arraysOfParams;
+            arraysOfParams = command.split(" +");
             String[] params = {""};
             if (arraysOfParams.length > 1) {
                 params = new String[arraysOfParams.length - 1];
@@ -75,7 +77,7 @@ public class ConsoleReader {
                             packetsSender.send(clientSocket,historyCommand);
                             break;
                         case ("exit"):
-                            toExit = true;
+                            ConsoleReader.setToExit(true);
                             break;
                         case ("execute_script"):
                             if (!FilesSafe.getFilesList().contains(params[0])) {
@@ -112,18 +114,27 @@ public class ConsoleReader {
                             packetsSender.send(clientSocket,updateCommand);
                             break;
                         default:
+                            sch++;
                             throw new InvalidNameException();
                     }
                 } catch (InvalidNameException | NonArgsExeption | TooManyArgsException | IllegalArgumentException | IOException e) {
                     System.out.println(e.getMessage());
-                    throw new Exception();
+                    sch++;
                 }
-                if (arraysOfParams[0].equals("execute_script")) throw new Exception();
+                if (arraysOfParams[0].equals("execute_script")) sch++;
             }
             else{
+                sch++;
                 System.out.println("Too many parameters. Use \"help\" to get a list of available commands.");
-                throw new Exception();
             }
         }
+        for (int i=0; i<commandsList.size()-sch;i++){
+            try {
+                receiver.receive(clientSocket);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        FilesSafe.pop();
     }
 }

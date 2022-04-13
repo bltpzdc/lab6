@@ -28,13 +28,12 @@ public class ServerReceiver {
         datagramSocket = serverSocket;
         try (ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(receiveData))) {
             Command command = (Command) ois.readObject();
-            System.out.println("Command "+ command.getName()+"received.");
+            System.out.println("Command "+ command.getName()+" received.");
             invoker.execute(command);
             HistorySaver saver = new HistorySaver();
             saver.save(command.getName());
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 }

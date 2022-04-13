@@ -32,12 +32,7 @@ public class ExitCommand implements Command, Serializable {
     public void execute(String params) {
         manager.exit();
     }
-    public void execute(Movie movie){
-    }
-    @Override
-    public void execute(String params, Movie movie) {
 
-    }
 
     @Override
     public String getName() {

@@ -32,12 +32,6 @@ public class ShowCommand implements Command, Serializable {
     public void execute(String params) {
         manager.show();
     }
-    public void execute(Movie movie){
-    }
-    @Override
-    public void execute(String params, Movie movie) {
-
-    }
 
     @Override
     public String getName() {

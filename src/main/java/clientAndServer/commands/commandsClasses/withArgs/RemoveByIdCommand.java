@@ -29,16 +29,10 @@ public class RemoveByIdCommand implements Command, Serializable {
         }
         tryParse(params);
     }
-    @Override
-    public void execute(String params, Movie movie) {
-
-    }
 
     @Override
     public void execute(String params) {
         movieList.remove(tryParse(params));
-    }
-    public void execute(Movie movie){
     }
 
     @Override

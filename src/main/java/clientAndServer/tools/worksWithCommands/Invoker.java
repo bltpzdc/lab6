@@ -7,13 +7,13 @@ import clientAndServer.exeptions.TooManyArgsException;
 
 public class Invoker {
 
-    public Command findCommand(String name, String[] params) throws InvalidNameException, NonArgsExeption, TooManyArgsException {
+    public void findCommand(String name, String params) throws InvalidNameException, NonArgsExeption, TooManyArgsException {
         if (CommandManager.getCommands().get(name)==null) throw new InvalidNameException();
-        else if ((CommandManager.getCommands().get(name).isWithArgs()==true)&&(params[0]=="")){throw new NonArgsExeption();}
-        else if ((CommandManager.getCommands().get(name).isWithArgs()==false)&&(params[0]!="")){throw new TooManyArgsException();}
-        Command com = CommandManager.getCommands().get(name);
-        com.setParams(params[0]);
-        return com;
+        else if ((CommandManager.getCommands().get(name).isWithArgs()==true)&&(params=="")){throw new NonArgsExeption();}
+        else if ((CommandManager.getCommands().get(name).isWithArgs()==false)&&(params!="")){throw new TooManyArgsException();}
+        Command command = CommandManager.getCommands().get(name);
+        command.setParams(params);
+        execute(command);
     }
 
     public void execute(Command command){

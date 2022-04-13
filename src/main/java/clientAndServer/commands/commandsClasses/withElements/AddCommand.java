@@ -31,15 +31,10 @@ public class AddCommand implements Command, Serializable {
     }
 
     @Override
-    public void execute(String params) {
-    }
     public void execute(Movie movie){
         manager.add(movie);
     }
-    @Override
-    public void execute(String params, Movie movie) {
 
-    }
 
     @Override
     public String getName() {

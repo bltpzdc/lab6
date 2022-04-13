@@ -33,12 +33,6 @@ public class UpdateCommand implements Command, Serializable {
     }
 
     @Override
-    public void execute(String params) {
-
-    }
-    public void execute(Movie movie){
-    }
-    @Override
     public void execute(String params, Movie movie) {
         movieList.update(tryParse(params), movie);
     }

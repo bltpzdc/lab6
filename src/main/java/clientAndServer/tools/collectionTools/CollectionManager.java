@@ -248,13 +248,15 @@ public class CollectionManager {
         ServerSender serverSender = new ServerSender();
         serverSender.send(serverAnswer);
     }
+    public void execScript(){
+
+    }
+
     public void executeScript(String fileName) {
-        FilesSafe filesSafe = new FilesSafe();
-        FilesSaver filesSaver = new FilesSaver(filesSafe);
+        FilesSaver filesSaver = new FilesSaver();
         String[] arrayOfParams;
-        //String[] params={""};
         FileReader reader = new FileReader();
-        FileChecker fileChecker = new FileChecker(filesSafe);
+        FileChecker fileChecker = new FileChecker();
         if (fileChecker.check(fileName)) {
             reader.read(fileName);
             filesSaver.save(fileName);
@@ -265,10 +267,18 @@ public class CollectionManager {
                 if (arrayOfParams.length > 1) {
                     params = new String[arrayOfParams.length - 1];
                     System.arraycopy(arrayOfParams, 1, params, 0, arrayOfParams.length - 1);
+                    try{
+                        invoker.findCommand(arrayOfParams[0], params[0]);
+                        HistorySaver historySaver = new HistorySaver();
+                        historySaver.save(arrayOfParams[0]);
+                    }
+                    catch (InvalidNameException | NonArgsExeption | TooManyArgsException e){
+                        System.out.println(e.getMessage());
+                    }
                 }
                 if (params.length <= 1) {
                     try {
-                        invoker.findCommand(arrayOfParams[0], params);
+                        invoker.findCommand(arrayOfParams[0], params[0]);
                         HistorySaver historySaver = new HistorySaver();
                         historySaver.save(arrayOfParams[0]);
                     } catch (InvalidNameException | NonArgsExeption | TooManyArgsException e) {
@@ -282,6 +292,7 @@ public class CollectionManager {
         else{
             System.out.println("File recursion found.");
         }
+
         FilesSafe.setFileNamesList(new ArrayList<String>());
     }
 }
